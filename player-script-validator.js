@@ -301,7 +301,8 @@ const error = require('./player-script-error');
 const rules = {
     EVAL: /eval[\s]*\(/i,
     FUNCTION: /Function[\s]*\(/,
-    WINDOW: /(\.|\['|\[")[\s]*window/i
+    WINDOW: /(\.|\['|\[")[\s]*window/i,
+    DOCUMENT: /(\.|\['|\[")[\s]*document/i,
 };
 
 module.exports = function (source) {
@@ -319,6 +320,14 @@ module.exports = function (source) {
 
     if (rules.FUNCTION.test(script)) {
         errors.push(error.FUNCTION);
+    }
+
+    if (rules.WINDOW.test(script)) {
+        errors.push(error.WINDOW);
+    }
+
+    if (rules.DOCUMENT.test(script)) {
+        errors.push(error.DOCUMENT);
     }
 
     return errors;

@@ -15,6 +15,7 @@ test('first test', function (t) {
      * TODO: https://github.com/GridWars/PlayerScriptValidator/issues/3
      */
     // t.same([error.WINDOW], validator('window.location.reload()'));
+    // t.same([error.DOCUMENT], validator("var body = document.getElementsByTagName('body');"));
 
     t.same([], validator('var player = {};'));
 });
