@@ -296,12 +296,24 @@
 //
 // };
 
-var error = require('./player-script-error')
+const error = require('./player-script-error');
+
+const rules = {
+    EVAL: /eval[\s]*\(/i
+};
 
 module.exports = function (source) {
-    const script = source.trim()
+    const script = source.trim();
 
     if (script === '') {
-        return [error.EMPTY]
+        return [error.EMPTY];
     }
-}
+
+    let errors = [];
+
+    if (rules.EVAL.test(script)) {
+        errors.push(error.EVAL);
+    }
+
+    return errors;
+};
