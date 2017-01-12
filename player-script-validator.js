@@ -296,6 +296,8 @@
 //
 // };
 
-module.exports = function (sourceScript) {
+var error = require('./player-script-error')
 
+module.exports = function (sourceScript) {
+    return [error.EMPTY]
 }
