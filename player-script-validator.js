@@ -298,6 +298,10 @@
 
 var error = require('./player-script-error')
 
-module.exports = function (sourceScript) {
-    return [error.EMPTY]
+module.exports = function (source) {
+    var script = source.trim()
+
+    if (script === '') {
+        return [error.EMPTY]
+    }
 }
