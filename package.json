@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "GridWars Component",
   "main": "player-script-validator.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GridWars/PlayerScriptValidator.git"
@@ -13,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GridWars/PlayerScriptValidator/issues"
   },
-  "homepage": "https://github.com/GridWars/PlayerScriptValidator#readme"
+  "homepage": "https://github.com/GridWars/PlayerScriptValidator#readme",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
 }
