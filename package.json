@@ -1,0 +1,17 @@
+{
+  "name": "gridwars-player-script-validator",
+  "version": "1.0.0",
+  "description": "GridWars Component",
+  "main": "player-script-validator.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GridWars/PlayerScriptValidator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GridWars/PlayerScriptValidator/issues"
+  },
+  "homepage": "https://github.com/GridWars/PlayerScriptValidator#readme"
+}
