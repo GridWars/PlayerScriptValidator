@@ -12,7 +12,7 @@
 //     return warriorValidator;
 // }
 //
-// warriorValidator = {
+// const warriorValidator = {
 //
 //     shootTestPlayerCount : 4,
 //
@@ -299,7 +299,9 @@
 const error = require('./player-script-error');
 
 const rules = {
-    EVAL: /eval[\s]*\(/i
+    EVAL: /eval[\s]*\(/i,
+    FUNCTION: /Function[\s]*\(/,
+    WINDOW: /(\.|\['|\[")[\s]*window/i
 };
 
 module.exports = function (source) {
@@ -313,6 +315,10 @@ module.exports = function (source) {
 
     if (rules.EVAL.test(script)) {
         errors.push(error.EVAL);
+    }
+
+    if (rules.FUNCTION.test(script)) {
+        errors.push(error.FUNCTION);
     }
 
     return errors;
