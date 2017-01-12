@@ -299,7 +299,7 @@
 var error = require('./player-script-error')
 
 module.exports = function (source) {
-    var script = source.trim()
+    const script = source.trim()
 
     if (script === '') {
         return [error.EMPTY]
