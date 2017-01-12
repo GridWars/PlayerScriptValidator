@@ -11,5 +11,10 @@ test('first test', function (t) {
 
     t.same([error.EVAL, error.FUNCTION], validator("eval('Function()')"));
 
+    /**
+     * TODO: https://github.com/GridWars/PlayerScriptValidator/issues/3
+     */
+    // t.same([error.WINDOW], validator('window.location.reload()'));
+
     t.same([], validator('var player = {};'));
 });
